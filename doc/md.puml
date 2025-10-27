@@ -1,15 +1,21 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+' Model de Domini
 
-autonumber
+class TaskManager {
+}
 
-== Initialization ==
+class Usuari {
+    nom: String
+}
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+class Task{
+    title: string
+    desc: string
+    dataInici: Date
+    dataFinal: Date
+}
 
-== Repetition ==
+TaskManager "1" -- "1..*" Usuari : enters >
+TaskManager "1" -- "1..*" Task : storage >
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
 @enduml

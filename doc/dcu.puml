@@ -1,15 +1,36 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+' Diagrama de casis d'ús
 
-autonumber
+left to right direction
 
-== Initialization ==
+actor Usuari as u
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+package "Task manager" {
+    '  Farem els casos d'ús segons els verbs CRUD
 
-== Repetition ==
+    ' C = create
+    usecase "UC1 - Crear tasca" as UC1
+    ' R =  read
+    usecase "UC2 - Veure tasca"  as UC2
+    ' U = update
+    usecase "UC3 - Editar tasca" as UC3
+    ' D = eliminar
+    usecase "UC4 - Eliminar Tasca" as UC4
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+    ' Altres casos d´ús
+    usecase "UC5 - Rebre notificació" as UC5
+    usecase "UC6 - Marcar prioritat" as UC6
+}
+
+u --> UC1
+u --> UC2
+u --> UC3
+u --> UC4
+
+UC5 .> UC1: <<extends>>
+UC5 .> UC3: <<extends>>
+
+UC6 .> UC1: <<extends>>
+UC6 .> UC3: <<extends>>
+
 @enduml
