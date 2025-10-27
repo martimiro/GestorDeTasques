@@ -9,6 +9,9 @@ public interface InListTask {
     // Buida la llista de tasques
     public void buidar();
 
+    // Elimina una tasca de la llista
+    public void eliminarTasca(Task task) throws TaskException;
+
     // Itera la llista
-    public String llistarTasks() throws TaskException;
+    public String llistarTasques() throws TaskException;
 }

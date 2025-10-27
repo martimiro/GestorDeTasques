@@ -6,26 +6,45 @@ import java.util.ArrayList;
 
 public class ListTask implements InListTask {
     // Atributs
-    private ArrayList<Task> llistaTask;
+    private ArrayList<Task> llistaTasques;
 
     // Constructor
     public ListTask() {
-        this.llistaTask = new ArrayList<Task>();
+        this.llistaTasques = new ArrayList<Task>();
     }
 
     // Mètodes
     public void afegirTask(Task task) throws TaskException {
-        llistaTask.add(task);
+        if (task == null) {
+            throw new TaskException("Cannot add the task.");
+        }
+        llistaTasques.add(task);
     }
 
     public void buidar() {
-        for(int i = 0; i < llistaTask.size(); i++) {
-            llistaTask.remove(i);
-        }
+        llistaTasques.clear();
     }
 
-    public String llistarTask() throws TaskException {
+    public void eliminarTasca(Task task) throws  TaskException{
+        if (llistaTasques.isEmpty()) {
+            throw new TaskException("The list is empty");
+        } else if (task == null) {
+            throw new TaskException("Cannot add the task");
+        }
+
+        llistaTasques.remove(task);
+    }
+
+    public String llistarTasques() throws TaskException {
+        if (llistaTasques.isEmpty()) {
+            throw new TaskException("The list is empty");
+        }
+
         StringBuffer sb = new StringBuffer();
+
+        for (Task task : llistaTasques) {
+            sb.append(task.toString()).append("\n");
+        }
 
         return sb.toString();
     }
