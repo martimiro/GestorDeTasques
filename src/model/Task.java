@@ -1,5 +1,7 @@
 package model;
 
+import view.TaskException;
+
 import java.util.Date;
 
 public class Task {
@@ -10,7 +12,7 @@ public class Task {
     private Date dataFinal;
 
 
-    // Creació de la classe
+    // Constructor
     public Task(String title, String desc, Date dataInici, Date dataFinal) {
         this.setTitle(title);
         this.setDesc(desc);
@@ -53,19 +55,23 @@ public class Task {
     }
 
     // Altres mètodes
+
+    /*
+    Els següents quatre mètodes són els mètodes que representen els verbs CRUD.
+     */
+
     public void crearTasca(Task task) {
+    }
+
+    public void veureTasca() throws TaskException {
 
     }
 
-    public void veureTasca() {
+    public void editarTasca() throws TaskException{
 
     }
 
-    public void editarTasca() {
-
-    }
-
-    public void eliminarTasca() {
+    public void eliminarTasca() throws TaskException{
 
     }
 }
