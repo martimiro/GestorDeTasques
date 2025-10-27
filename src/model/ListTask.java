@@ -1,7 +1,6 @@
 package model;
 
 import view.TaskException;
-
 import java.util.ArrayList;
 
 public class ListTask implements InListTask {

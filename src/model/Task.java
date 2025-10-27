@@ -1,7 +1,6 @@
 package model;
 
 import view.TaskException;
-
 import java.util.Date;
 
 public class Task {
@@ -63,11 +62,8 @@ public class Task {
         this.estat = estat;
     }
 
-    // Altres mètodes
-
-    /*
-    Els següents quatre mètodes són els mètodes que representen els verbs CRUD.
-     */
+    // Altres mètodes:
+    // Els següents quatre mètodes són els mètodes que representen els verbs CRUD.
 
     public void crearTasca(Task task) {
     }
