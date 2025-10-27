@@ -15,11 +15,13 @@ public class ListTask implements InListTask {
 
     // Mètodes
     public void afegirTask(Task task) throws TaskException {
-
+        llistaTask.add(task);
     }
 
     public void buidar() {
-
+        for(int i = 0; i < llistaTask.size(); i++) {
+            llistaTask.remove(i);
+        }
     }
 
     public String llistarTask() throws TaskException {
