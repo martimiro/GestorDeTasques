@@ -53,7 +53,7 @@ public class Task {
     }
 
     // Altres mètodes
-    public void crearTasca() {
+    public void crearTasca(Task task) {
 
     }
 
