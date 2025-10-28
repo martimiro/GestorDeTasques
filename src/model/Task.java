@@ -1,18 +1,19 @@
 package model;
 
 import view.TaskException;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.List;
 
 public class Task {
     // Atributs
     private String title;
     private String desc;
-    private Date dataInici;
-    private Date dataFinal;
+    private LocalDate dataInici;
+    private LocalDate dataFinal;
     private boolean estat;
 
     // Constructor
-    public Task(String title, String desc, Date dataInici, Date dataFinal, boolean estat) {
+    public Task(String title, String desc, LocalDate dataInici, LocalDate dataFinal, boolean estat) {
         this.setTitle(title);
         this.setDesc(desc);
         this.setDataInici(dataInici);
@@ -29,11 +30,11 @@ public class Task {
         return this.desc;
     }
 
-    public Date getDataInici() {
+    public LocalDate getDataInici() {
         return this.dataInici;
     }
 
-    public Date getDataFinal() {
+    public LocalDate getDataFinal() {
         return this.dataFinal;
     }
 
@@ -50,11 +51,11 @@ public class Task {
         this.desc =  desc;
     }
 
-    public void setDataInici(Date dataInici) {
+    public void setDataInici(LocalDate dataInici) {
         this.dataInici = dataInici;
     }
 
-    public void setDataFinal(Date dataFinal) {
+    public void setDataFinal(LocalDate dataFinal) {
         this.dataFinal = dataFinal;
     }
 
@@ -65,7 +66,8 @@ public class Task {
     // Altres mètodes:
     // Els següents quatre mètodes són els mètodes que representen els verbs CRUD.
 
-    public void crearTasca(Task task) {
+    public void crearTasca(Task task, ListTask taskList) throws TaskException {
+
     }
 
     public void veureTasca() throws TaskException {
@@ -87,7 +89,7 @@ public class Task {
         sb.append("Description: ").append(desc).append("\n");
         sb.append("Start date: ").append(dataInici).append("\n");
         sb.append("End date: ").append(dataFinal).append("\n");
-        sb.append("Done: ").append(estat ? "Yes" : "No").append("\n");
+        sb.append("Done: ").append(estat ? "Yes" : "No");
 
         return sb.toString();
     }

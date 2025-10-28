@@ -2,6 +2,7 @@ package model;
 
 import view.TaskException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ListTask implements InListTask {
     // Atributs
@@ -46,5 +47,31 @@ public class ListTask implements InListTask {
         }
 
         return sb.toString();
+    }
+
+    // Busca la mida de la llista
+    public int midaLLista() {
+        return this.llistaTasques.size();
+    }
+
+    // Busca si hi ha un objecte a la llista
+    public boolean hasItem(Task task) throws TaskException{
+        boolean condition = false;
+        Iterator<Task> itr = llistaTasques.iterator();
+        Task taskActual = null;
+
+        if(llistaTasques.isEmpty()) {
+            throw new TaskException("The list is empty");
+        }
+
+        while (itr.hasNext()) {
+            taskActual = itr.next();
+
+            if (task == taskActual) {
+                condition = true;
+            }
+        }
+
+        return condition;
     }
 }
