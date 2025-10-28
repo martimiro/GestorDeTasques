@@ -12,7 +12,6 @@ import java.util.Date;
 import static com.sun.javafx.fxml.expression.Expression.not;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class LlistaTaskTest {
     // Variables LocalDate i boolean
     LocalDate dataInici = LocalDate.of(1999,1,1);
