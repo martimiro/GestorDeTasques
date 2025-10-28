@@ -67,11 +67,11 @@ public class Task {
     // Els següents quatre mètodes són els mètodes que representen els verbs CRUD.
 
     public void crearTasca(Task task, ListTask taskList) throws TaskException {
+        if (task == null) {
+            throw new TaskException("Cannot add the task");
+        }
 
-    }
-
-    public void veureTasca() throws TaskException {
-
+        taskList.afegirTask(task);
     }
 
     public void editarTasca() throws TaskException{

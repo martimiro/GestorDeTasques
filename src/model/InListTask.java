@@ -14,4 +14,7 @@ public interface InListTask {
 
     // Itera la llista
     public String llistarTasques() throws TaskException;
+
+    // Veu un item de la llista
+    public Task veureTasca(int index) throws TaskException;
 }

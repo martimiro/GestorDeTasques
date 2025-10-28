@@ -49,6 +49,16 @@ public class ListTask implements InListTask {
         return sb.toString();
     }
 
+    public Task veureTasca(int index) throws TaskException {
+        if (llistaTasques.isEmpty()) {
+            throw new TaskException("The list is empty");
+        } else if (index < 0 || index >= llistaTasques.size()) {
+            throw new TaskException("Index out of bounds");
+        }
+
+        return llistaTasques.get(index);
+    }
+
     // Busca la mida de la llista
     public int midaLLista() {
         return this.llistaTasques.size();

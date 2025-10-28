@@ -72,4 +72,11 @@ public class LlistaTaskTest {
                 "End date: 1999-01-02\n" +
                 "Done: Yes\n", llistaTasquesTest);
     }
+
+    @Test
+    void veureTasca() throws TaskException{
+        Task tascVar = llistaTaskTest.veureTasca(0);
+
+        assertSame(taskTest, tascVar);
+    }
 }
